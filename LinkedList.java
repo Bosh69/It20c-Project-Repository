@@ -17,6 +17,19 @@ public class LinkedList {
         current.next = newNode;
     }
 
+     // Method to print the linked list
+     public void printList() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data);
+            if (current.next != null) {
+                System.out.print(" -> ");
+            }
+            current = current.next;
+        }
+        System.out.println(" -> null");
+    }
+
    
     }
  
