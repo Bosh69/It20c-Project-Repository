@@ -30,6 +30,15 @@ public class Main {
         System.out.println("------------------------------");
         list.printList();
 
+        // Deleting by value using user input
+        System.out.println("Enter the song title to delete from the list: Reign Of Darkness by Thy Art Is Murder");
+        input = scanner.nextLine();  // Get user input for the song to delete
+        list.deleteByValue(input);   // Delete the song from the linked list
+        System.out.println("Deleting \"Reign Of Darkness by Thy Art Is Murder" + input + "\" from the list...");
+        System.out.println("Current Linked List:");
+        System.out.println("------------------------------");
+        list.printList();
+
         
 
         scanner.close();
