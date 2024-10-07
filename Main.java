@@ -30,24 +30,7 @@ public class Main {
         System.out.println("------------------------------");
         list.printList();
 
-        // Deleting by value using user input
-        System.out.println("Enter the song title to delete from the list: Reign Of Darkness by Thy Art Is Murder");
-        input = scanner.nextLine();  // Get user input for the song to delete
-        list.deleteByValue(input);   // Delete the song from the linked list
-        System.out.println("Deleting \"Reign Of Darkness by Thy Art Is Murder" + input + "\" from the list...");
-        System.out.println("Current Linked List:");
-        System.out.println("------------------------------");
-        list.printList();
-
-          // Move/Swap Pointer based on user input
-          System.out.println("Enter the index of the node you want to move:1");
-          int fromIndex = scanner.nextInt();
-          System.out.println("Enter the index to swap it with:0");
-          int toIndex = scanner.nextInt();
-          list.moveNodePointer(fromIndex, toIndex);
-          System.out.println("After swapping the nodes, the updated Linked List:");
-          System.out.println("------------------------------");
-          list.printList();
+      
 
         
 
