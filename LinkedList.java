@@ -49,6 +49,56 @@ public class LinkedList {
         }
     }
 
+    // Method to move a node to a new position (swap nodes)
+    public void moveNodePointer(int currentIndex, int newIndex) {
+        if (head == null || currentIndex == newIndex) return;
+
+        // Edge case: Invalid indices (negative or out-of-bound)
+        if (currentIndex < 0 || newIndex < 0) return;
+
+        // Find the node to move
+        Node prev = null, current = head, movingNode = null, movingPrev = null;
+        int count = 0;
+
+        while (current != null && count < currentIndex) {
+            movingPrev = prev;
+            prev = current;
+            current = current.next;
+            count++;
+        }
+
+        movingNode = current;
+
+        // If the node to move was not found or index is out of bounds
+        if (movingNode == null) return;
+
+        // Remove the node from its current position
+        if (movingPrev != null) {
+            movingPrev.next = movingNode.next;
+        } else {
+            head = movingNode.next; // Moving the head
+        }
+
+        // Reset current to head and insert the node at the new position
+        prev = null;
+        current = head;
+        count = 0;
+
+        while (current != null && count < newIndex) {
+            prev = current;
+            current = current.next;
+            count++;
+        }
+
+        if (prev != null) {
+            movingNode.next = current;
+            prev.next = movingNode;
+        } else {
+            movingNode.next = head;
+            head = movingNode;
+        }
+    }
+
    
     }
  
