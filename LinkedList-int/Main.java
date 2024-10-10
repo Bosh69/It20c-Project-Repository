@@ -9,9 +9,9 @@ public class Main {
 
         System.out.println("Good Day!");
         System.out.println("-------------------");
-    }
+    
 
-    while true {
+        while true {
 
             System.out.println("\n Choose a number that you want to do: "
                     + "\n 1. Add Items"
@@ -32,7 +32,38 @@ public class Main {
                     System.out.println("Current Linked List:");
                     linkedList.printList();
                     break;
-            }
-    }
+            
+                case 2:
+                    
+                    System.out.println("Enter the value of the item you want to delete: ");
+                    int valueToDelete = scanner.nextInt();
+                    linkedList.deleteByValue(valueToDelete);
+                    System.out.println("Item deleted (if existed). Current Linked List:");
+                    linkedList.printList();
+                    break;
 
+                case 3:
+                    
+                    System.out.println("Enter the index of the item you want to move: ");
+                    int currentIndex = scanner.nextInt();
+                    System.out.println("Enter the new index to move the item to: ");
+                    int newIndex = scanner.nextInt();
+                    linkedList.moveNodePointer(currentIndex, newIndex);
+                    System.out.println("Item moved! Current Linked List:");
+                    linkedList.printList();
+                    break;
+
+                case 4:
+                    
+                    System.out.println("Exit! Bye...........!!!");
+                    scanner.close(); // Closing the scanner
+                    return; // Exit the program
+
+                default:
+                    System.out.println("Invalid choice! Please choose a valid option.");
+            }
+        
+        }
+    
+    }
 }
